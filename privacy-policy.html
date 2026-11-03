@@ -13,6 +13,7 @@
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="index.html#features">Features</a>
+                <a href="#data-deletion">Request Data Deletion</a>
             </div>
         </div>
     </nav>
@@ -20,80 +21,181 @@
     <section class="section" style="padding-top: 6rem;">
         <div class="container policy">
             <h1>Privacy Policy</h1>
-            <p class="effective-date"><em>Effective Date: June 23, 2026</em></p>
+            <p class="effective-date"><em>Last updated: November 3, 2026</em></p>
 
             <p>
-                This Privacy Policy describes how Tiny Trouble VR ("we", "our", or "us")
-                handles information when you use our VR application <strong>Tiny Trouble VR</strong>
-                (the "App") available on the Meta Quest Store.
+                This Privacy Policy explains how the developer of <strong>Tiny Trouble VR</strong>
+                ("we", "our", or "us") processes information when you use the App on Meta Quest.
+                It also applies to the store version named <strong>Tiny Trouble VR Demo</strong>.
+                You can contact us at
+                <a href="mailto:zp1412042552@gmail.com">zp1412042552@gmail.com</a>.
             </p>
 
-            <h2>1. Information We Collect</h2>
+            <h2>1. Meta User ID and Account Identification</h2>
             <p>
-                The App itself <strong>does not collect, store, or transmit</strong> any
-                personal information. All game data (scores, progress, settings) is stored
-                locally on your device and never sent to our servers.
+                When Meta Platform features are enabled, the App uses Meta's Platform SDK
+                and the identity of the signed-in Meta account, including the Meta User ID
+                used by the platform, to perform account-specific purchase and entitlement
+                checks. This identifies which account's purchases should be checked so that
+                paid content is unlocked for the correct user and purchases can be restored.
+                This account information comes from Meta, not from a separate account you
+                create with us.
             </p>
             <p>
-                However, when you download and run the App through the Meta Quest Store,
-                Meta Platforms, Inc. ("Meta") may collect certain information as governed
-                by their own privacy policy. This includes:
+                Our current purchase integration requests the signed-in account's purchases
+                through Meta's account-scoped APIs. It does not separately retrieve, log,
+                or save the raw Meta User ID in a developer-operated database or gameplay
+                save file. Processing through Meta's SDK still involves account-related
+                user data, even when we do not maintain our own server copy. We do not use
+                this data for advertising, profiling, or cross-app tracking.
+            </p>
+
+            <h2>2. In-App Purchases and Downloadable Content</h2>
+            <p>
+                When purchase features are enabled, the App receives and processes product
+                information, product identifiers (SKUs), localized prices, purchase-query
+                results, checkout success or failure, and content ownership or entitlement
+                status through the Meta Platform SDK. The current expansion product is
+                <strong>tt_premium_worlds</strong>, a non-consumable purchase for the Tiny
+                Trouble and Alley worlds. Availability of paid features can differ between
+                App versions; a version with purchases disabled does not run this purchase flow.
             </p>
             <ul>
-                <li>Your Meta / Oculus account information</li>
-                <li>Basic usage analytics and crash logs (if you have opted in on your device)</li>
-                <li>Hardware / device identifiers</li>
+                <li>We retrieve product information to display the available expansion and its current localized price.</li>
+                <li>We launch Meta's checkout interface when you choose to purchase.</li>
+                <li>We check account-specific purchases to verify ownership, unlock content, restore purchases, and avoid granting access to an account that does not own the product.</li>
+                <li>After checkout and when the App returns to the foreground, the App can recheck ownership. If an online check fails, it can read Meta's on-device durable-purchase cache for offline access.</li>
             </ul>
             <p>
-                We do not receive any personally identifiable information from Meta — only
-                aggregate, anonymized statistics when available.
+                Ownership state is held in memory during the App session; we do not write
+                a separate ownership flag into gameplay saves or send purchase results to
+                a developer-operated purchase server. Meta manages the payment and purchase
+                records. We do not receive your payment-card number, payment credentials,
+                or Meta password. Diagnostic messages about purchase requests contain
+                request/error codes or ownership/cache status, rather than raw User IDs,
+                payment details, or full purchase records.
             </p>
 
-            <h2>2. Hand Tracking &amp; Camera Data</h2>
+            <h2>3. Local Gameplay, Settings, and Hand Tracking</h2>
             <p>
-                The App uses the Meta Quest hand-tracking system to read hand and finger
-                positions. All processing is performed <strong>entirely on-device</strong>
-                in real time. No hand-tracking data, video frames, or depth sensor data
-                is ever recorded, saved, or transmitted off your device.
+                The App saves gameplay progress, scores and best times, tutorial completion,
+                in-game inventory and world progress, and settings such as sound preferences
+                locally on your device. These records allow you to continue playing and keep
+                your preferences between sessions. The current App does not upload these
+                gameplay saves to a developer-operated server.
             </p>
-
-            <h2>3. Third-Party Services</h2>
-            <p>The App does not integrate any third-party analytics, advertising, or SDKs that collect data. The only third-party involved is:</p>
-            <ul>
-                <li>
-                    <strong>Meta / Oculus Platform</strong> — provides the app distribution,
-                    entitlement checking, and optional leaderboard services. Their data handling
-                    is governed by
-                    <a href="https://www.meta.com/privacy/" target="_blank" rel="noopener">Meta's Privacy Policy</a>.
-                </li>
-            </ul>
-
-            <h2>4. Children's Privacy</h2>
             <p>
-                The App does not knowingly collect any personal information from children
-                under 13 (or under the applicable age of consent in your region). If you
-                believe a child has provided us with personal data, please contact us and
-                we will delete it promptly.
+                Meta Quest provides hand and finger pose and movement information for
+                flight, gesture recognition, and menu interaction. The App processes these
+                inputs on-device. It does not transmit hand-tracking data to us or access
+                or upload raw camera images or video for these controls. Where gesture
+                recording or calibration tools are available and explicitly activated,
+                derived hand-pose templates can be saved in a local gesture profile. These
+                profiles are not uploaded to a developer-operated server.
             </p>
 
-            <h2>5. Your Rights</h2>
+            <h2>4. Support Communications</h2>
             <p>
-                Depending on your jurisdiction, you may have rights regarding your personal
-                data, including the right to access, correct, or delete data held by third
-                parties (Meta). Since we do not hold any of your personal data ourselves,
-                these requests should be directed to Meta.
+                If you email us for support or to exercise a privacy right, we receive your
+                email address and the information you choose to include, such as an App
+                version, problem description, or account identifier needed to locate relevant
+                records. We use this information to respond, resolve the issue, verify a
+                request when necessary, and carry out data requests. Please do not send
+                passwords or payment-card information.
             </p>
 
-            <h2>6. Changes to This Policy</h2>
+            <h2>5. Sharing and Meta Platform Services</h2>
+            <p>
+                The App communicates with Meta through the Platform SDK to initialize
+                platform services, retrieve products and account-specific purchases, and
+                complete checkout. We do not sell user data or share Meta User IDs or
+                purchase information with advertising networks. Email support is processed
+                through our email service provider. Information may also be disclosed when
+                required by applicable law.
+            </p>
+            <p>
+                Meta independently processes information for account, store, payment, device,
+                and platform services under
+                <a href="https://www.meta.com/privacy/" target="_blank" rel="noopener">Meta's Privacy Policy</a>.
+                Meta may separately collect platform diagnostics or provide aggregate store
+                statistics. Meta-controlled records are distinct from any records we hold.
+            </p>
+
+            <h2>6. Retention and Security</h2>
+            <p>
+                Local saves and any locally saved gesture profiles remain until removed
+                through device app-data controls or otherwise deleted. Platform-managed
+                purchase caches and any platform backup copies follow Meta's controls and
+                retention practices. We retain support communications only as needed to
+                handle the request and meet applicable obligations. We restrict access to
+                developer-held information and use the platform SDK for purchase handling
+                rather than collecting payment credentials ourselves.
+            </p>
+
+            <h2 id="data-deletion">7. Requesting Deletion of Your Data</h2>
+            <p>
+                <strong>All users, regardless of country or geographic location, may request
+                deletion of their App-related personal data held by us, free of charge.</strong>
+                You do not need to purchase content to make a request.
+            </p>
+            <p>
+                To request deletion, email
+                <a href="mailto:zp1412042552@gmail.com?subject=Tiny%20Trouble%20VR%20Data%20Deletion%20Request">zp1412042552@gmail.com</a>
+                with the subject <strong>"Tiny Trouble VR Data Deletion Request"</strong>.
+                Tell us that you want your App-related data deleted. Include only enough
+                information to locate the records concerned, such as the email address used
+                for earlier support correspondence. If an account identifier is necessary,
+                we will explain what is needed and why; do not send your Meta password or
+                payment-card details.
+            </p>
+            <p>
+                We will review the request, request proportionate identity verification only
+                where needed, delete the personal data we hold or control, and confirm the
+                result without undue delay and within applicable legal deadlines. If we do
+                not hold server-side records for your account, we will explain that and help
+                you identify the relevant local or platform controls. We may retain only
+                information required by law or necessary to establish, exercise, or defend
+                legal claims; if this applies, we will explain the reason and scope of the
+                retention in our response.
+            </p>
+            <p>
+                To remove gameplay saves, settings, and any saved gesture profiles from your
+                headset, use the device's clear-app-data or storage controls for Tiny Trouble
+                VR. This resets local progress. If Meta cloud backup is enabled for your App
+                data, manage the backup through Meta's backup controls as well so that old
+                data is not restored later. You may contact us at the same email address
+                for help with these steps.
+            </p>
+            <p>
+                Deleting our records or clearing local App data does not delete your Meta
+                account, cancel a purchase, or erase transaction records independently held
+                by Meta. Meta controls those records, and requests concerning them can be
+                made through Meta's account/privacy controls. We will help direct you to
+                those controls when relevant; this does not replace your right to request
+                deletion of data held by us. If you use the purchase features again, Meta
+                may provide your current entitlement status again to restore owned content.
+            </p>
+
+            <h2>8. Other Rights and Children's Privacy</h2>
+            <p>
+                You may also contact us to request access to or correction of personal data
+                we hold. Additional rights may apply under local law. A parent or guardian
+                can contact us about a child's App-related data using the same free deletion
+                process. The App uses Meta-managed account and purchase services and does
+                not require a separate developer account.
+            </p>
+
+            <h2>9. Changes to This Policy</h2>
             <p>
                 We may update this Privacy Policy from time to time. Changes will be posted
-                on this page with an updated effective date. Continued use of the App after
-                changes constitutes acceptance of the revised policy.
+                on this page with an updated date. We will provide additional notice or
+                obtain consent where required for material changes in our data practices.
             </p>
 
-            <h2>7. Contact</h2>
+            <h2>10. Contact</h2>
             <p>
-                If you have any questions about this Privacy Policy, please contact us:
+                For privacy questions, support, or data access, correction, and deletion
+                requests, contact the Tiny Trouble VR developer:
             </p>
             <p>
                 Email: <a href="mailto:zp1412042552@gmail.com">zp1412042552@gmail.com</a>
@@ -109,6 +211,7 @@
         <div class="container">
             <div class="footer-links">
                 <a href="index.html">Home</a>
+                <a href="#data-deletion">Request Data Deletion</a>
             </div>
             <p class="footer-copy">&copy; 2026 Tiny Trouble VR. All rights reserved.</p>
         </div>
