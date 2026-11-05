@@ -21,7 +21,7 @@
     <section class="section" style="padding-top: 6rem;">
         <div class="container policy">
             <h1>Privacy Policy</h1>
-            <p class="effective-date"><em>Last updated: November 3, 2026</em></p>
+            <p class="effective-date"><em>Last updated November 5, 2026</em></p>
 
             <p>
                 This Privacy Policy explains how the developer of <strong>Tiny Trouble VR</strong>
@@ -29,6 +29,19 @@
                 It also applies to the store version named <strong>Tiny Trouble VR Demo</strong>.
                 You can contact us at
                 <a href="mailto:zp1412042552@gmail.com">zp1412042552@gmail.com</a>.
+            </p>
+
+            <p>
+                The developer operates this App and is responsible for the App-related
+                personal data described here that is under our control. This policy covers
+                the User ID and In-App Purchases and/or downloadable content features
+                requested through Meta's Data Use Checkup, as well as local gameplay data
+                and support communications. You can read this policy and submit a deletion
+                request without signing in or making a purchase.
+            </p>
+            <p>
+                For deletion instructions, go directly to
+                <a href="#data-deletion">Requesting Deletion of Your Data</a>.
             </p>
 
             <h2>1. Meta User ID and Account Identification</h2>
@@ -49,6 +62,15 @@
                 user data, even when we do not maintain our own server copy. We do not use
                 this data for advertising, profiling, or cross-app tracking.
             </p>
+            <p>
+                The source of account identification is the Meta account currently signed
+                in on the headset. Meta's account-scoped SDK associates the App's purchase
+                requests with that account. The App uses the resulting account-specific
+                ownership status to decide whether to allow access to purchased worlds.
+                User ID access supports this purchase-verification purpose. The current
+                integration does not request a separate profile, email address, friends
+                list, or contact list from Meta.
+            </p>
 
             <h2>2. In-App Purchases and Downloadable Content</h2>
             <p>
@@ -59,6 +81,22 @@
                 <strong>tt_premium_worlds</strong>, a non-consumable purchase for the Tiny
                 Trouble and Alley worlds. Availability of paid features can differ between
                 App versions; a version with purchases disabled does not run this purchase flow.
+            </p>
+            <h3>Purchase data processing from request to access</h3>
+            <ul>
+                <li><strong>Product lookup.</strong> The App sends the expansion SKU to Meta's product service and reads the matching SKU and formatted local price from the response to display the offer.</li>
+                <li><strong>Ownership lookup.</strong> Meta returns purchase records for the signed-in account. The SDK response may contain platform purchase identifiers and other transaction fields. The App's current ownership logic reads the purchase SKU and pagination information, compares the SKU with tt_premium_worlds, and keeps the resulting owned or unowned status in session memory.</li>
+                <li><strong>Checkout.</strong> Choosing Purchase sends the SKU to Meta's checkout service. The App processes the completion or error result and then queries ownership again. Access is granted when ownership is verified.</li>
+                <li><strong>Restoration and offline checks.</strong> The App queries purchases again when restoring access or returning to the foreground. When an online query fails, it can request Meta's on-device durable-purchase cache. This uses the ownership information associated with the platform account.</li>
+            </ul>
+            <p>
+                SDK response messages are released after processing. The App keeps the
+                displayed price and ownership state in memory for the session. It does not
+                create a developer-side account ledger, transaction history, or purchase
+                database. The expansion is a durable, non-consumable entitlement, so the
+                App does not deduct dialogue credits or consume this purchase after use.
+                Meta continues to maintain its own purchase history and platform cache
+                according to its policies.
             </p>
             <ul>
                 <li>We retrieve product information to display the available expansion and its current localized price.</li>
@@ -113,6 +151,20 @@
                 through our email service provider. Information may also be disclosed when
                 required by applicable law.
             </p>
+            <ul>
+                <li><strong>Meta.</strong> The Meta Platform SDK and Meta services process account identification, product requests, checkout, and purchase verification for the App. Meta controls its account, payment, and platform transaction records.</li>
+                <li><strong>Google Gmail.</strong> Our support address uses Gmail. If you contact us, Google processes the email and its delivery information as part of providing email services. We use the correspondence to handle your support or privacy request.</li>
+                <li><strong>GitHub Pages.</strong> This public policy website is hosted on GitHub Pages. Opening the website involves normal web requests to GitHub, which may process your IP address and technical request information under its privacy practices.</li>
+            </ul>
+            <p>
+                The current App has no developer-operated purchase or gameplay backend
+                and includes no developer-integrated advertising or analytics service.
+                Service providers may process information in countries other than your
+                own under their applicable privacy terms. See
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>
+                and
+                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's Privacy Statement</a>.
+            </p>
             <p>
                 Meta independently processes information for account, store, payment, device,
                 and platform services under
@@ -122,6 +174,12 @@
             </p>
 
             <h2>6. Retention and Security</h2>
+            <ul>
+                <li><strong>Account-scoped purchase responses, price, and ownership state.</strong> The App processes SDK responses during purchase checks and retains its working state in session memory. Meta manages any persistent platform purchase cache.</li>
+                <li><strong>Gameplay saves and optional gesture profiles.</strong> These persist locally so progress, preferences, and recorded control profiles remain available between sessions, until you clear the App's data or delete the relevant files.</li>
+                <li><strong>Diagnostics.</strong> The App can write local technical logs, including purchase request/error codes and ownership/cache status. Their lifetime depends on the device and App logging controls. They can be removed with local App data. If you send logs to support, the submitted copy is handled as support correspondence.</li>
+                <li><strong>Support and privacy requests.</strong> We keep correspondence while needed to resolve the issue, carry out the request, or meet applicable legal obligations. You may request its deletion at any time. Any limited record retained to document compliance or defend a legal claim is restricted to that purpose.</li>
+            </ul>
             <p>
                 Local saves and any locally saved gesture profiles remain until removed
                 through device app-data controls or otherwise deleted. Platform-managed
@@ -130,6 +188,12 @@
                 handle the request and meet applicable obligations. We restrict access to
                 developer-held information and use the platform SDK for purchase handling
                 rather than collecting payment credentials ourselves.
+            </p>
+            <p>
+                Access to developer-held support correspondence is limited to people who
+                need it to handle the request. We use reasonable technical and organizational
+                measures appropriate to the information involved. Transmission and storage
+                services also rely on the protections provided by Meta and our email provider.
             </p>
 
             <h2 id="data-deletion">7. Requesting Deletion of Your Data</h2>
@@ -157,6 +221,21 @@
                 information required by law or necessary to establish, exercise, or defend
                 legal claims; if this applies, we will explain the reason and scope of the
                 retention in our response.
+            </p>
+            <h3>What happens after you send a request</h3>
+            <ul>
+                <li>We identify the App-related records under our control, including support emails and any attachments you previously supplied. You may request deletion of all such records or specify particular records.</li>
+                <li>Where verification is necessary, we ask for the minimum information reasonably needed. We do not require payment or a new developer account to process a deletion request.</li>
+                <li>We delete the relevant developer-controlled records and copies under our control, subject to the limited legal exceptions explained above, and tell you what was deleted.</li>
+                <li>If any requested data must be retained, we explain which data, the reason, and the applicable retention requirement. You can reply to the same email address to ask us to reconsider or clarify the result.</li>
+                <li>If the information exists only on your headset or is independently controlled by Meta, we explain the relevant device or platform steps. We still handle any developer-controlled information included in the same request.</li>
+            </ul>
+            <p>
+                You can also send a deletion request using your own email application if
+                the email link does not open. Send it to
+                <strong>zp1412042552@gmail.com</strong> and name <strong>Tiny Trouble VR</strong>
+                or <strong>Tiny Trouble VR Demo</strong>. A support-correspondence deletion
+                request usually needs only the email address used for that correspondence.
             </p>
             <p>
                 To remove gameplay saves, settings, and any saved gesture profiles from your
